@@ -780,8 +780,35 @@ pos-nav {
     border-bottom: 1px solid #e3e3e3;
 
     h2 {
+
         font-weight: 100;
         margin: 10px auto;
 
+    }
+}
+
+
+
+//ALL PRODUCT PAGE
+//fiter Nav
+.filter-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+#filterSelect {
+    padding: 0 !important;
+}
+
+
+//product list
+.product-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @media (width > 768px) {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }

@@ -6,6 +6,7 @@ import "./styles/style.css"; //main styles
 import { DataProvider } from "./hooks/DataContext";
 import { PosProvider } from "./hooks/PosHook";
 import { PageDataProvider } from "./hooks/SingleProduct/PageData";
+import AllProduct from "./pages/AllProduct";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/product/:id" element={<SingleProduct />} />
+                <Route path="/allproduct" element={<AllProduct />} />
               </Routes>
             </BrowserRouter>
           </PageDataProvider>
