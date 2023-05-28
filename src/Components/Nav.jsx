@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import NavList from "./NavList";
 import { AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -17,12 +18,19 @@ function Nav() {
             <NavList list={list} />
           </div>
         </div>
-        <div className="logo">LOGO</div>
-        <div className="nav-list">
-          <NavList list={list} />
+        <div className="logo">
+          <Link to={"/"}>LOGO</Link>
         </div>
-        <div className="cart">
-          <AiOutlineShoppingCart />
+        <div className="nav-list">
+          <Link to={"/allproduct"}>
+            {" "}
+            <NavList list={list} />
+          </Link>
+        </div>
+        <div className="cart-icon">
+          <Link to={"/cart"}>
+            <AiOutlineShoppingCart />
+          </Link>
         </div>
         <div className="account">
           <AiOutlineUser />

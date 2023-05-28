@@ -8,6 +8,11 @@
     font-family: $font-family;
 }
 
+a {
+    text-decoration: none;
+    color: #e1dddd;
+}
+
 .content {
     max-width: 1200px;
     margin: auto;
@@ -72,13 +77,15 @@ nav {
     text-align: center;
 }
 
-.cart,
+.cart-icon,
 .account,
 .hamburger {
-    font-size: 20px;
-    color: #fff;
-    margin: auto 5px;
-    cursor: pointer;
+    svg {
+        font-size: 20px;
+        color: #fff;
+        margin: auto 5px;
+        cursor: pointer;
+    }
 
     img {
         width: 30px;
@@ -833,6 +840,10 @@ pos-nav {
     border-bottom: 1px solid #e3e3e3;
 }
 
+.cart-details {
+    flex: 1;
+}
+
 .title-price {
     h2 {
         font-size: 16px;
@@ -856,7 +867,7 @@ pos-nav {
 .cart-action {
     margin-top: 20px;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     gap: 30px;
 
@@ -875,10 +886,21 @@ pos-nav {
     }
 }
 
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    svg {
+        display: block;
+        font-size: 14px;
+        border: 1px solid #253237;
+    }
+}
+
 //cart deatil styling
 
 .cart-total {
-    // padding: 20px;
     border: 1px solid #e3e3e3;
 
 }

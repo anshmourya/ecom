@@ -1,15 +1,33 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { CartData } from "../../hooks/CartComponent/CartData";
 
 function CartDetail() {
+  const { carItems } = useContext(CartData);
+  const [totalItem, setTotalItem] = useState(0);
+  const [totalPrices, setTotalPrices] = useState(0);
+
+  useEffect(() => {
+    let itemTotal = 0;
+    let priceTotal = 0;
+
+    carItems.forEach((item) => {
+      itemTotal += item.quantity;
+      priceTotal += item.price * item.quantity;
+    });
+
+    setTotalItem(itemTotal);
+    setTotalPrices(priceTotal);
+  }, [carItems]);
+
   return (
     <>
       <div className="total-items">
         <div className="item-detail">
-          <span>5 items</span>
+          <span>{totalItem} items</span>
           <span>Shipping</span>
         </div>
         <div className="total-price">
-          <span>$59.50</span>
+          <span>${totalPrices.toFixed(2)}</span>
           <span>$7.00</span>
         </div>
       </div>
@@ -19,7 +37,7 @@ function CartDetail() {
           <span>Taxes</span>
         </div>
         <div className="taxes-price">
-          <span>$66.50</span>
+          <span>${(totalPrices + 7).toFixed(2)}</span>
           <span>$0.00</span>
         </div>
       </div>

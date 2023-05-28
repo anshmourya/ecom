@@ -2,7 +2,8 @@ import React from "react";
 import Description from "./Description";
 import Star from "../PosProduct/Star";
 import BuysingOption from "./BuysingOption";
-function ProductDesc({ price, title, desc }) {
+function ProductDesc({ productData }) {
+  const { price, title, desc } = productData;
   return (
     <>
       <div className="simgle-product-desc">
@@ -19,7 +20,7 @@ function ProductDesc({ price, title, desc }) {
           <Description desc={desc} />
         </div>
         <div className="cart-option">
-          <BuysingOption />
+          <BuysingOption productData={productData} />
         </div>
       </div>
     </>

@@ -20,7 +20,6 @@ function SingleProduct() {
     fetchData();
     console.log(SingleProduct);
   }, [id]);
-  const { description, title, price } = SingleProduct;
   return (
     <>
       <Nav />
@@ -31,10 +30,10 @@ function SingleProduct() {
             <SecondaryImg />
           </NavForProvider>
         </div>
-        <ProductDesc title={title} price={price} desc={description} />
+        <ProductDesc productData={SingleProduct} />
       </div>
       <div className="main-product-desc content">
-        <MainDesc desc={description} />
+        <MainDesc desc={SingleProduct.desc} />
       </div>
       <div className="suggestion-slider content">
         <PosProduct />

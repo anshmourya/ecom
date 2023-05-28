@@ -21,7 +21,7 @@ function PosCard({ CategoryData }) {
           <p>${price}</p>
         </div>
         <div className="cart">
-          <CartBtn />
+          <CartBtn cart={CategoryData} />
         </div>
       </div>
     </>
